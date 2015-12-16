@@ -1,6 +1,6 @@
 from django.db import models
-import random
-import time
+#import random
+#import time
 
 
 class Listing(models.Model):
@@ -17,7 +17,7 @@ class Listing(models.Model):
              update_fields=None):
 
         # it takes time to add new inventory, anywhere from 5 to 15 seconds
-        computational_wait = random.randrange(5, 15)
-        time.sleep(computational_wait)
+        #computational_wait = random.randrange(5, 15)
+        #time.sleep(computational_wait)
 
         return super().save(force_insert, force_update, using, update_fields)
