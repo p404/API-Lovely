@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'inventory.wsgi.application'
 if os.environ.get('PRODUCTION') == 'False':
     DATABASES = {
         'default': {
-            'ENGINE': 'django.contrib.gis.db.backends.postgis',
-            'NAME': 'Listings',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'postgres',
             'USER': 'postgres',
-            'HOST': 'localhost',
-            'PASSWORD': 'identicalSecurePassword',
+            'HOST': 'db',
+            'PORT': 5432,
             'CONN_MAX_AGE': 3600,
         }
     }

@@ -1,0 +1,13 @@
+db:
+  image: postgres:latest
+api:
+  build: .
+  volumes:
+   - .:/djangoapp
+  ports:
+    - "3000:3000"
+  links:
+    - db
+  command: /sbin/my_init
+  environment:
+  - PRODUCTION=False
