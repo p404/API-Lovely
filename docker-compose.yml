@@ -4,6 +4,7 @@ api:
   build: .
   volumes:
    - .:/djangoapp
+  working_dir: /djangoapp
   ports:
     - "8000:8000"
   links:
