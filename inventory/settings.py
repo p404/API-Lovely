@@ -103,10 +103,11 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.contrib.gis.db.backends.postgis',
-            'NAME': 'Listings',
-            'USER': 'postgres',
-            'HOST': 'db.robots.com',
-            'PASSWORD': 'identicalSecurePassword',
+            'NAME': os.environ.get('DATABASE_NAME', ''),
+            'USER': os.environ.get('DATABASE_USER', ''),
+            'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
+            'HOST': os.environ.get('DATABASE_HOST', ''),
+            'PORT': os.environ.get('DATABASE_PORT', ''),
             'CONN_MAX_AGE': 3600,
         }
     }
