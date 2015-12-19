@@ -25,7 +25,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '../../media/').replace('\\','/')
 SECRET_KEY = 'c9mv6h5klt06a8y@tcg64bs74ea)f+9gc^go__remwtxj0^sii'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -89,6 +88,7 @@ WSGI_APPLICATION = 'inventory.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 if os.environ.get('PRODUCTION') == 'False':
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -100,6 +100,7 @@ if os.environ.get('PRODUCTION') == 'False':
         }
     }
 else:
+    DEBUG = False
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
