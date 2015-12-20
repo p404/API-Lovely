@@ -26,7 +26,8 @@ SECRET_KEY = 'c9mv6h5klt06a8y@tcg64bs74ea)f+9gc^go__remwtxj0^sii'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 # Super user for test is:
 # user: listing

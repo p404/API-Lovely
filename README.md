@@ -11,8 +11,8 @@ You must have both [Docker](https://docs.docker.com/) (or a
 [Docker Compose](https://docs.docker.com/compose/) running on your machine.
 
 You can find instructions for the recommended setup on
-[Linux](doc/DOCKER_SETUP_ON_LINUX.md), [Mac OSX](doc/DOCKER_SETUP_ON_MAC.md) and
-[Windows 8+](doc/DOCKER_SETUP_ON_WINDOWS.md).
+[Linux](https://docs.docker.com), [Mac OSX](https://docs.docker.com) and
+[Windows 8+](https://docs.docker.com).
 
 
 ### Run containers
@@ -54,3 +54,16 @@ After you created and user and password, now you can test the API with this new 
 	curl -H 'Content-Type: application/json; indent=4' -u USERNAME_HERE:PASSWORD_HERE -X POST -d '{"beds": 2, "baths": 1, "address": "123 Some St, Gotham, IL 51944", "provider_name": "RentingIsTheBestAround", "price": 750}' http://192.168.99.100:8000/listings/
 
 ## Production enviroment 
+Assuming that you have configurated the salt-master instance and you have an public key uploaded. you can run the deploy.py script
+
+Installing deps :
+
+	pip install paramiko -v 1.16.0
+ 
+Creating new AWS Instances:
+	
+	python deploy.py cold -n production-environment
+
+Deploying a new version of the container in all servers:
+
+	python deploy up
