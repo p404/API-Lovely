@@ -53,7 +53,7 @@ After you created and user and password, now you can test the API with this new 
 
 	curl -H 'Content-Type: application/json; indent=4' -u USERNAME_HERE:PASSWORD_HERE -X POST -d '{"beds": 2, "baths": 1, "address": "123 Some St, Gotham, IL 51944", "provider_name": "RentingIsTheBestAround", "price": 750}' http://192.168.99.100:8000/listings/
 
-## Production enviroment 
+## Production environment 
 Assuming that you have configurated the salt-master instance and you have an public key uploaded. you can run the deploy.py script
 
 Installing deps :
